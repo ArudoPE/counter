@@ -5,11 +5,9 @@ CountButton.addEventListener("click", countFunction);
 let DiscountButton = document.getElementById("DiscountButton");
 DiscountButton.addEventListener("click", discountFunction);
 
-
-
-
 //Functions
 function countFunction() {
+    document.getElementById("error-message").innerHTML = "";
     let value = document.getElementById("input-number");
     let temp = parseInt(value.value);
     temp++;
@@ -19,14 +17,11 @@ function discountFunction() {
     let value = document.getElementById("input-number");
     let temp = parseInt(value.value);
     if(temp == 0) {
-        let errorMessage = document.getElementById("error-message");
-        errorMessage.value = "You can't go below 0!";
+        document.getElementById("error-message").innerHTML = "You can't go below 0!";
     }
     else {
+        document.getElementById("error-message").innerHTML = "";
         temp--;
         value.value = temp;
     }
 }
-
-
-//document.getElementById("input-number").value = 1;
